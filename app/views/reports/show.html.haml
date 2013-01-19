@@ -1,14 +1,30 @@
 %h3 Report
--# @report
   Customer: #{@report.customer_name}
 %p
   Account: #{@report.account_number}
 %p
-  Meter: #{@report.account_number}
+  Meter: #{@report.meter_number}
 %p
-  Installation: #{@report.account_number}
+  Address: #{@report.service_address}
 %p
-  Date: #{@report.account_number}
+  Installation: #{@report.installation_type}
 %p
-  Expires: #{@report.account_number}
--#  :customer_name, :account_number, :meter_number, :service_address, :installation_type, :date_test, :assembly_height, :assembly_manufacturer, :assembly_model, :assembly_size, :assembly_number, :supply_pressure, :assembly_type, :remarks
+  Date: #{@report.date_test}
+%p
+  Assembly Height: #{@report.assembly_height}
+%p
+  Manufacturer: #{@report.assembly_manufacturer}
+%p
+  Model: #{@report.assembly_model}
+%p
+  Size: #{@report.assembly_size}
+%p
+  Serial Number: #{@report.assembly_number}
+%p
+  Supply Pressure at Assembly: #{@report.supply_pressure}
+%p
+  Discharge Pressure at Assembly: #{@report.discharge_pressure}
+%p
+  Assembly Type: #{@report.assembly_type}
+%p
+  Notes: #{@report.remarks}
