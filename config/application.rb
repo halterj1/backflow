@@ -72,5 +72,9 @@ module Backflow
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Heroku
+    config.assets.initialize_on_precompile = false
+    ActiveSupport::Deprecation.silenced    = Rails.env.production?
   end
 end
