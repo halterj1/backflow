@@ -1,4 +1,11 @@
 %h3 Home
+
+%h4 Users:
 - @users.each do |user|
   %p
-    User: #{link_to user.name, user}
+    #{link_to user.name, user}
+
+%h4 Reports:
+- @reports.each do |report|
+  %p
+    #{link_to report.customer_name, report}

@@ -42,8 +42,12 @@ group :test do
   gem 'capybara', '>= 2.0.1'
 end
 
+group :development, :test do
+  gem 'faker'
+  gem 'populator'
+  gem "factory_girl_rails", ">= 4.1.0"
+  gem "rspec-rails", ">= 2.11.4"
+end
+
 gem "cucumber-rails", ">= 1.3.0", :group => :test, :require => false
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
-
-gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
-gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
