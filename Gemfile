@@ -43,7 +43,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'faker'
+  gem 'ffaker'
   gem 'populator'
   gem "factory_girl_rails", ">= 4.1.0"
   gem "rspec-rails", ">= 2.11.4"

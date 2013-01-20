@@ -27,20 +27,21 @@ ActiveRecord::Schema.define(:version => 20130119184735) do
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "reports", :force => true do |t|
-    t.string   "customer_name"
-    t.integer  "meter_number"
-    t.integer  "account_number"
-    t.string   "service_address"
-    t.string   "installation_type"
-    t.datetime "date_test",             :null => false
-    t.integer  "assembly_height"
-    t.text     "assembly_manufacturer"
-    t.text     "assembly_model"
-    t.string   "assembly_size"
+    t.string   "customer_name",         :null => false
+    t.string   "customer_number",       :null => false
+    t.string   "account_number",        :null => false
+    t.string   "meter_number"
+    t.string   "service_address",       :null => false
+    t.string   "installation_type",     :null => false
+    t.date     "date_test",             :null => false
+    t.string   "assembly_height"
+    t.string   "assembly_manufacturer"
+    t.string   "assembly_model"
+    t.decimal  "assembly_size"
     t.string   "assembly_number"
     t.integer  "supply_pressure"
     t.integer  "discharge_pressure"
-    t.string   "assembly_type"
+    t.string   "assembly_type",         :null => false
     t.text     "remarks"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false

@@ -16,12 +16,7 @@
             %td= link_to report.customer_name, report
             %td= report.account_number
             %td= report.date_test.to_date
-            %td 999 9999
-            /%td= report.phone_number
-            %td Edit
-            %td View
+            %td= report.customer_number
+            %td= link_to("Edit report", report_path(report), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini')
+            %td= link_to("Delete report", report_path(report), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini')
 
-          -# %td
-            %a.btn.btn-mini{"data-toggle" => "modal", :href => "#role-options-#{user.id}", :type => "button"} Change role
-            = render user
-          -# %td= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user
