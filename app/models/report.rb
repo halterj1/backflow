@@ -1,5 +1,7 @@
 class Report < ActiveRecord::Base
   # attr_accessible :title, :body
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
