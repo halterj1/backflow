@@ -3,17 +3,24 @@
   %table.table.table-condensed
     %thead
       %tr
-        %th Username
-        %th Email
+        %th Client
+        %th Account Number
         %th Registered
-        /%th
-        /%th
+        %th Phone
+        %th
+        %th
     %tbody
       - @reports.each do |report|
-        %tr
-          %td= link_to report.customer_name, report
-          %td= report.account_number
-          %td= report.date_test.to_date
+        %div.table-row
+          %tr
+            %td= link_to report.customer_name, report
+            %td= report.account_number
+            %td= report.date_test.to_date
+            %td 999 9999
+            /%td= report.phone_number
+            %td Edit
+            %td View
+
           -# %td
             %a.btn.btn-mini{"data-toggle" => "modal", :href => "#role-options-#{user.id}", :type => "button"} Change role
             = render user
