@@ -10,4 +10,9 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
+  after_create :default_role
+  def default_role
+    self.roles << Role.where(:name => 'user').first
+  end
+  
 end

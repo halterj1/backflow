@@ -1,16 +1,21 @@
 namespace :db do
-  desc "Erase and fill database"
+  desc "Erase and fill database with reports"
   task :populate => :environment do
     require 'populator'
     require 'ffaker'
     
-    [Report].each(&:delete_all)
+    [Report, User].each(&:delete_all)
     
-    User.populate 0 do |user|
+    User.populate 9 do |user|
       user.name                = Faker::Name.name
       user.email               = Faker::Internet.email
       user.encrypted_password  = Faker::Name.name
     end
+    
+    puts 'DEFAULT USERS'
+    user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
+    puts 'user: ' << user.name
+    user.add_role :admin
     
     Report.populate 50 do |report|
       report.customer_name          = Faker::Name.name

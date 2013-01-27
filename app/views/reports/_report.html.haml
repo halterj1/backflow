@@ -1,10 +1,10 @@
-.modal{:id => "role-options-#{report.id}", :style => "display: none;"}
+.modal{:id => "#report-values-#{report.id}", :style => "display: none;"}
   = simple_form_for report, :url => report_path(report), :html => {:method => :put, :class => 'form-horizontal' } do |f|
     .modal-header
       %a.close{"data-dismiss" => "modal"} ×
-      %h3 Change Role
+      %h3 Edit Report
     .modal-body
-      = f.input :role_ids, :collection => Role.all, :as => :radio_buttons, :label_method => lambda {|t| t.name.titleize}, :label => false, :item_wrapper_class => 'inline'
+      %p Hey!
     .modal-footer
-      = f.submit "Change Role", :class => "btn"
+      = f.submit "Edit Report", :class => "btn"
       %a.btn{"data-dismiss" => "modal", :href => "#"} Close

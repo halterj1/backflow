@@ -17,6 +17,8 @@
             %td= report.account_number
             %td= report.date_test.to_date
             %td= report.customer_number
-            %td= link_to("Edit report", report_path(report), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini')
+            %td
+              %a.btn.btn-mini{"data-toggle" => "modal", :href => "#report-values-#{report.id}", :type => "button"} Edit Report
+              = render report
             %td= link_to("Delete report", report_path(report), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini')
 
