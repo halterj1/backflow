@@ -1,0 +1,78 @@
+= form_for(@report) do |f|
+  - if @report.errors.any?
+    #errorExplanation
+      %h2
+        = pluralize(@report.errors.count, "error")
+        prohibited
+        this report from being saved:
+      %ul
+        - @report.errors.full_messages.each do |msg|
+          %li= msg
+          
+  .field
+    = f.label :Name
+    %br
+    = f.text_field :customer_name
+  .field
+    = f.label :Number
+    %br
+    = f.text_field :customer_number
+  .field
+    = f.label :Account
+    %br
+    = f.text_field :account_number
+  .field
+    = f.label :Meter
+    %br
+    = f.text_field :meter_number
+  .field
+    = f.label :Address
+    %br
+    = f.text_field :service_address
+  .field
+    = f.label :Installation
+    %br
+    = f.text_field :installation_type
+  .field
+    = f.label :Date
+    %br
+    = f.text_field :date_test
+  .field
+    = f.label :Assembly_height
+    %br
+    = f.text_field :assembly_height
+  .field
+    = f.label :Manufacturer
+    %br
+    = f.text_field :assembly_manufacturer
+  .field
+    = f.label :Model
+    %br
+    = f.text_field :assembly_model
+  .field
+    = f.label :Size
+    %br
+    = f.text_field :assembly_size
+  .field
+    = f.label :Serial_number
+    %br
+    = f.text_field :assembly_number
+  .field
+    = f.label :Supply_pressure_at_assembly
+    %br
+    = f.text_field :supply_pressure
+  .field
+    = f.label :Discharge_pressure_at_assembly
+    %br
+    = f.text_field :discharge_pressure
+  .field
+    = f.label :Assembly_ype
+    %br
+    = f.text_field :assembly_type
+  .field
+    = f.label :Notes
+    %br
+    = f.text_field :remarks
+    
+  .actions
+    = f.submit

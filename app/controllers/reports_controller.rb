@@ -9,13 +9,23 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
   end
   
+  def edit
+    @report = Report.find(params[:id])
+  end
+  
   def update
-    authorize! :update, @reports, :message => 'Not authorized as an administrator.'
-    @reports = Report.find(params[:id])
-    if @reports.update_attributes(params[:report], :as => :admin)
-      redirect_to reports_path, :notice => "User updated."
-    else
-      redirect_to reports_path, :alert => "Unable to update report."
+    @report = Report.find(params[:id])
+ 
+    respond_to do |format|
+      if @report.update_attributes(params[:report])
+        format.html  { redirect_to(@report,
+                      :notice => 'Report was successfully updated.') }
+        format.json  { head :no_content }
+      else
+        format.html  { render :action => "edit" }
+        format.json  { render :json => @report.errors,
+                      :status => :unprocessable_entity }
+      end
     end
   end
     

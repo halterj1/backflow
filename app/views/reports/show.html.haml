@@ -30,3 +30,10 @@
   Assembly Type: #{@report.assembly_type}
 %p
   Notes: #{@report.remarks}
+%p
+  - if current_user.has_role? :admin
+    = link_to 'Edit', edit_report_path
+  - if current_user.has_role? :VIP
+    = link_to 'Edit', edit_report_path
+  |
+  = link_to 'Back', reports_path
