@@ -1,0 +1,31 @@
+.signin {
+  #form {
+    margin: 2em 0 0 2em;
+    width: 19%;
+    padding: 0.5em 1.4em 0.5em 0.8em;
+    border-right: 3px dashed rgba(0, 0, 0, 0.4);
+    float: left;
+  
+    p {
+      line-height: 1.7em;
+      padding-top: 12px;
+    }
+  }
+  
+  #content {
+    width: 70%;
+    height: 20em;
+    padding: 0.8em 1.5em 0.8em 1.5em;
+    float: right;
+    margin-top: 1em;
+    
+    h3 {
+      font-size: 1.8em;
+      padding: 0.4em 0 0.5em 0
+    }
+    p {
+      font-size: 1.1em;
+    }
+  }
+
+}

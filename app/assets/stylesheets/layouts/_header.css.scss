@@ -4,4 +4,19 @@ header {
     margin-right: auto;
     width: 100%; 
   }
+  
+  background-color: #415b85;
+  border: 1px solid black;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  margin: 1em auto 1em 0;
+  height: 100%;
+  width: 100%;
+  h3 {
+    padding: 0.3em 0 0.3em 1.7em;
+    font-size: 3em;
+    color: white;
+    line-height: 1em;
+  }
 }

@@ -1,11 +1,21 @@
-- if params[:next]
-  = f.hidden_field :next, :value => params[:next]
-
-#sign_in
-  %h2 Sign in
-  = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
-    = f.input :email, :autofocus => true
-    = f.input :password
-    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-    = f.button :submit, "Sign in", :class => 'btn-primary'
-  = render "devise/shared/links"
+.signin
+  #form
+    %h2 Sign in
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
+      = f.input :email, :autofocus => true
+      = f.input :password
+      = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+      = f.button :submit, "Sign in", :class => 'btn-primary'
+    %p
+      = render "devise/shared/links"
+    
+  #content
+    %h3 Purus penatibus placerat?
+    
+    %p Aliquet nec. Magna risus egestas aliquet elementum. Scelerisque sit nisi, lundium, sagittis, velit et montes dapibus. Augue platea pulvinar enim proin turpis vel proin tincidunt scelerisque platea turpis nascetur? Odio in urna et natoque platea hac dictumst purus elit placerat aliquet cursus eu aliquam vel, nec ac cum! Facilisis.
+    
+    %h3 Duis vut, sit porttitor et aliquet lacus natoque ultrices vut lorem?
+    
+    %p Dolor mid. Elementum purus, dolor etiam, egestas augue, tortor scelerisque tempor pulvinar et adipiscing, eu in enim etiam nascetur turpis, hac cum, scelerisque eros. Pid integer proin dis pellentesque in, mid mattis. Porttitor rhoncus? Nisi arcu, vut et massa turpis!
+    
+    %h3 Lorem, ut, tempor nascetur a penatibus rhoncus mattis est dignissim turpis porta in etiam dis? Nunc et?

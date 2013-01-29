@@ -18,14 +18,10 @@
         %nav.navbar-inner
           .container
             = render 'layouts/navigation'
-            
-      %navbar
-        .container
-          .content
-            .row
-              %header
-                = render 'layouts/messages'
-                = render 'layouts/header'
+    %div.full-shadow
+      %header
+        = render 'layouts/messages'
+        = render 'layouts/header'
             
       #main{:role => "main"}
         .container
