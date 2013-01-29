@@ -1,0 +1,26 @@
+.navbar-inner {
+  background: #e2e2e2;
+  border-bottom: solid 1px black;
+  
+  .container {
+    width: 63.5%
+  }
+  
+  li {
+    &.inline a {
+      display: inline;
+    }
+  }
+  
+  .pull-right {
+  	float: right;
+    margin-right: 0;
+    position: relative;
+    li {
+      padding: 10px 15px 10px;
+    }
+    a {
+      padding: 0 !important;
+    }
+  }
+}

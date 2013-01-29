@@ -4,7 +4,6 @@ gem 'rails', '3.2.11'
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
 gem "haml", ">= 3.1.7"
-gem "bootstrap-sass", ">= 2.2.2.0"
 gem "devise", ">= 2.1.2"
 gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
@@ -23,6 +22,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
+  gem 'bourbon'
+  gem 'bootstrap-sass'
 end
 
 group :development do
