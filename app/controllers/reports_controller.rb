@@ -9,6 +9,32 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
   end
   
+  def new
+    @report = Report.new
+ 
+    respond_to do |format|
+      format.html  # new.html.erb
+      format.json  { render :json => @report }
+    end
+  end
+  
+  def create
+    @report = Report.new(params[:report])
+ 
+    respond_to do |format|
+      if @report.save
+        format.html  { redirect_to(@report,
+                      :notice => 'Report was successfully created.') }
+        format.json  { render :json => @report,
+                      :status => :created, :location => @report }
+      else
+        format.html  { render :action => "new" }
+        format.json  { render :json => @report.errors,
+                      :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   def edit
     @report = Report.find(params[:id])
   end
