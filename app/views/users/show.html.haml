@@ -1,5 +1,10 @@
-%h3 User
-%p
-  User: #{@user.name}
-%p
-  Email: #{@user.email if @user.email}
+.span8
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th Username
+        %th Email
+    %tbody
+      %tr
+        %td #{@user.name}
+        %td #{@user.email if @user.email}

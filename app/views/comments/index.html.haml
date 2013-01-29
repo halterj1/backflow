@@ -1,0 +1,7 @@
+%h1
+  Comments
+  
+%div#comments
+  - @comments.each do |comment|
+    .comment
+      = simple_format comment.content

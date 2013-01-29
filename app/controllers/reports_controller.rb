@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  before_filter :authenticate_user!
+  load_and_authorize_resource
   
   def index
     @reports = Report.all
@@ -7,6 +7,9 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find(params[:id])
+    @commentable = @report
+    @reports = @commentable.comments
+    @comment = Comment.new
   end
   
   def new
@@ -56,7 +59,6 @@ class ReportsController < ApplicationController
   end
     
   def destroy
-    authorize! :destroy, @report, :message => 'Not authorized as an administrator.'
     report = Report.find(params[:id])
     report.destroy
     redirect_to reports_path, :notice => "report deleted."
