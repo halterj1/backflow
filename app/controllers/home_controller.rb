@@ -1,6 +1,15 @@
 class HomeController < ApplicationController
+  
   def index
-    @users = User.all
-    @reports = Report.all
+    if current_user
+      @users = User.all
+      @reports = Report.all
+      render :dashboard
+    end
   end
+
+  def dashboard
+     @users = User.all
+  end
+  
 end

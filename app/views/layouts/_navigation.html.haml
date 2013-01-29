@@ -17,16 +17,16 @@
       %li.inline
         #{current_user.name}
         = link_to '(edit)', edit_user_registration_path
-      %li
-        = link_to 'Logout', destroy_user_session_path, :method=>'delete'
       - if current_user.has_role? :VIP
         %li
           = link_to 'AdminPanel', rails_admin_path
       - if current_user.has_role? :admin
         %li
           = link_to 'AdminPanel', rails_admin_path
+      %li
+        = link_to 'Logout', :destroy_user_session
     - else
       %li
-        = link_to 'Sign up', new_user_registration_path
+        = link_to 'Sign up', :new_user_registration
       %li
-        = link_to 'Login', new_user_session_path
+        = link_to 'Login', :new_user_session

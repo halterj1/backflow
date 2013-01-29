@@ -1,3 +1,6 @@
+- if params[:next]
+  = f.hidden_field :next, :value => params[:next]
+
 #sign_in
   %h2 Sign in
   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
