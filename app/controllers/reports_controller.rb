@@ -2,7 +2,11 @@ class ReportsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @reports = Report.all
+    if params[:tag]
+      @reports = Report.tagged_with(params[:tag])
+    else
+      @reports = Report.all
+    end
   end
 
   def show

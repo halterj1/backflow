@@ -4,7 +4,7 @@ namespace :db do
     require 'populator'
     require 'ffaker'
     
-    [Report, User].each(&:delete_all)
+    [Report, User, Comment, Role].each(&:delete_all)
     
     User.populate 9 do |user|
       user.name                = Faker::Name.name
@@ -12,6 +12,11 @@ namespace :db do
       user.encrypted_password  = Faker::Name.name
     end
     
+    puts 'ROLES'
+    YAML.load(ENV['ROLES']).each do |role|
+      Role.find_or_create_by_name({ :name => role }, :without_protection => true)
+      puts 'role: ' << role
+    end
     puts 'DEFAULT USERS'
     user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
     puts 'user: ' << user.name
@@ -34,6 +39,11 @@ namespace :db do
       report.discharge_pressure     = rand(50...100)
       report.assembly_type          = ['RPZA', 'DCVA', 'Fire Check', 'PVB', 'AVB', 'Air Gap']
       report.remarks                = Populator.sentences(2..3)
+      Comment.populate 10..30 do |comment|
+        comment.content            = Populator.words(1..5).titleize
+        comment.commentable_id     = report.id
+        comment.commentable_type   = "Report"
+      end
     end
     
   end

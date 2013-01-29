@@ -10,7 +10,7 @@ Backflow::Application.routes.draw do
       post '/signin'  => 'devise/sessions#create',    :as => :user_session
       get '/signout'  => 'devise/sessions#destroy',   :as => :destroy_user_session
       get "/signup"   => "devise/registrations#new",  :as => :new_user_registration
-      get "/profile"     => "devise/registrations#edit",  :as => :edit_user_registration
+      get "/profile"  => "devise/registrations#edit", :as => :edit_user_registration
     end
   
   resources :users do

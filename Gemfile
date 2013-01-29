@@ -17,6 +17,7 @@ gem 'pg'
 gem 'carrierwave-processing'
 gem 'carrierwave'
 gem 'fog'
+gem 'acts-as-taggable-on'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
