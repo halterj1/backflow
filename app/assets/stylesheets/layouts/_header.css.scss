@@ -19,4 +19,23 @@ header {
     color: white;
     line-height: 1em;
   }
+  
+  .alert {
+    background-color: rgba(223, 240, 216, 0.8);
+    
+    // Border Radius
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0em;
+    
+    position: absolute;
+    right: 0;
+    width: 25%;
+    
+    #flash_notice {
+      margin-left: 2em;
+      position: relative;
+    }
+  }
 }
