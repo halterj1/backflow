@@ -15,7 +15,7 @@
         %div.table-row
           %tr
             %td= link_to report.customer_name, report
-            %td #{raw report.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ')}
+            %td #{raw report.tags.map(&:name).map { |t| link_to t, user_path(t) }.join(', ')}
             %td= report.account_number
             %td= report.date_test.to_date
             %td= report.customer_number
