@@ -1,0 +1,15 @@
+%h3
+  Company: #{@company.company_name}
+%p
+  Phone: #{@company.company_number}
+%p
+  Email: #{@company.company_email}
+%p
+  County: #{@company.company_county}
+%p
+  - if current_user.has_role? :admin
+    = link_to 'Edit', edit_company_path
+  - if current_user.has_role? :VIP
+    = link_to 'Edit', edit_company_path
+  |
+  = link_to 'Back', companies_path

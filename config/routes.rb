@@ -15,11 +15,13 @@ Backflow::Application.routes.draw do
     end
   
   resources :users do
-    resources :comments
   end
   
   resources :reports do
     resources :comments
+  end
+
+  resources :companies do
   end
   
   authenticated :user do

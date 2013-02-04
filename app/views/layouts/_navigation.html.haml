@@ -1,16 +1,12 @@
 = link_to "Backflow", root_path, :class => 'brand'
 %ul.nav
   - if user_signed_in?
-    /- if current_user.has_role? :admin
     %li
       = link_to 'Users', users_path
     %li
       = link_to 'Reports', reports_path
-    - if current_user.has_role? :VIP
-      %li
-        = link_to 'Users', users_path
-      %li
-        = link_to 'Reports', reports_path
+    %li
+      = link_to 'Companies', companies_path
 %div.nav-collapse
   %ul.nav.pull-right
     - if user_signed_in?
