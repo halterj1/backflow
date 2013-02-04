@@ -4,8 +4,12 @@
     padding: 3em;
     
     .column {
-      padding: 2em 1em;
-      
+      padding-top: 1.5em
+    }
+    
+    .list-row {
+      float: left;
+      padding: 1em 2em 1em 2em;
     }
   }
 }

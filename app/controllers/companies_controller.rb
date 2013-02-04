@@ -2,11 +2,7 @@ class CompaniesController < ApplicationController
   load_and_authorize_resource
   
   def index
-    if params[:tag]
-      @companies = Company.tagged_with(params[:tag])
-    else
-      @companies = Company.all
-    end
+    @companies = Company.all
   end
 
   def show
