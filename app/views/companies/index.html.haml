@@ -15,7 +15,9 @@
           %tr
             %td= link_to company.company_name, company
             %td= company.company_number
-            %td= company.company_email
+            %td= link_to company.company_email, "mailto:#{company.company_email}?subject=Backflow"
+            /%a{:href => "mailto:"example@foo.com"?subject=hello world"} Email Me!
+            /= company.company_email
             %td= company.company_county
             %td= link_to('Edit', edit_company_path(company), :class => 'btn btn-mini')
             %td= link_to("Delete company", company_path(company), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini')
