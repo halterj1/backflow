@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
-  #has_many :reports
-
+  
   def index
     @users = User.all
   end
