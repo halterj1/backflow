@@ -4,7 +4,7 @@ namespace :db do
     require 'populator'
     require 'ffaker'
     
-    [Report, User, Comment, Role].each(&:delete_all)
+    [Report, User, Comment, Role, Company].each(&:delete_all)
     
     User.populate 9 do |user|
       user.name                = Faker::Name.name
@@ -21,6 +21,13 @@ namespace :db do
     user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => ENV['ADMIN_EMAIL'].dup, :password => ENV['ADMIN_PASSWORD'].dup, :password_confirmation => ENV['ADMIN_PASSWORD'].dup
     puts 'user: ' << user.name
     user.add_role :admin
+    
+    Company.populate 9 do |company|
+      company.company_name                = Faker::Company.name
+      company.company_number              = Faker::PhoneNumber.short_phone_number
+      company.company_email               = Faker::Internet.email
+      company.company_county              = Faker::Address.city
+    end
     
     Report.populate 50 do |report|
       report.customer_name          = Faker::Name.name
