@@ -1,0 +1,35 @@
+.full-shadow {
+  margin: 0 auto 0 auto;
+  width: 68.4%;
+  max-width: 960px;
+  position: relative;
+}
+
+#main {
+  max-width: 960px;
+  width: 100%;
+  .container {
+    float: right;
+    width: 100%;
+  }
+  
+  .content {
+    background-color: #e2e2e2;
+    padding: 20px;
+    border: solid 1px black;
+    min-height: 20em;
+  
+    .row {
+      margin: 0;
+    }
+  
+    // Box Shadow
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    // Border Radius
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 0 0 6px 6px;
+    border-radius: 0 0 6px 6px;
+  }
+}

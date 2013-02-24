@@ -18,16 +18,11 @@
           .container
             = render 'layouts/navigation'
     %div.full-shadow
-      %header
-        = render 'layouts/messages'
-        = render 'layouts/header'
-            
       #main{:role => "main"}
         .container
           .content
             .row
-              .span12
-                = yield
+              = yield
             %footer
         / ! end of .container
       / ! end of #main

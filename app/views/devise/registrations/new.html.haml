@@ -1,10 +1,24 @@
-%h2 Sign up
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
-  = f.error_notification
-  = display_base_errors resource
-  = f.input :name, :autofocus => true
-  = f.input :email, :required => true
-  = f.input :password, :required => true
-  = f.input :password_confirmation, :required => true
-  = f.button :submit, 'Sign up', :class => 'btn-primary'
-= render "devise/shared/links"
+.signup
+  #form
+    %h2 Sign up
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
+      = f.error_notification
+      = display_base_errors resource
+      = f.input :name, :autofocus => true
+      = f.input :email, :required => true
+      = f.input :password, :required => true
+      = f.input :password_confirmation, :required => true
+      = f.button :submit, 'Sign up', :class => 'btn-primary'
+    %p
+      = render "devise/shared/links"
+    
+  #content
+    %h3 Purus penatibus placerat?
+    
+    %p Aliquet nec. Magna risus egestas aliquet elementum. Scelerisque sit nisi, lundium, sagittis, velit et montes dapibus. Augue platea pulvinar enim proin turpis vel proin tincidunt scelerisque platea turpis nascetur? Odio in urna et natoque platea hac dictumst purus elit placerat aliquet cursus eu aliquam vel, nec ac cum! Facilisis.
+    
+    %h3 Duis vut, sit porttitor et aliquet lacus natoque ultrices vut lorem?
+    
+    %p Dolor mid. Elementum purus, dolor etiam, egestas augue, tortor scelerisque tempor pulvinar et adipiscing, eu in enim etiam nascetur turpis, hac cum, scelerisque eros. Pid integer proin dis pellentesque in, mid mattis. Porttitor rhoncus? Nisi arcu, vut et massa turpis!
+    
+    %h3 Lorem, ut, tempor nascetur a penatibus rhoncus mattis est dignissim turpis porta in etiam dis? Nunc et?

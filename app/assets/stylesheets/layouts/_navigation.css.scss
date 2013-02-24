@@ -1,8 +1,13 @@
 .navbar-inner {
-  background: #e2e2e2;
+  background: #415b85;
   border-bottom: solid 1px black;
+  .brand, .nav > li > a {
+    color: white;
+    text-shadow: 0 1px 0 black;
+  }
   
   .container {
+    max-width: 960px;
     width: 68.4%
   }
   

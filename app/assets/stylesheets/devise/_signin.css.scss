@@ -1,10 +1,28 @@
-.signin {
+.signin, .signup {
   #form {
-    margin: 2em 0 0 2em;
-    width: 19%;
-    padding: 0.5em 1.4em 0.5em 0.8em;
+    padding: 25px 0 25px 0;
     border-right: 3px dashed rgba(0, 0, 0, 0.4);
     float: left;
+    font-size: 12px;
+    max-width: 432px;
+    margin: 1em auto 1em auto;
+    position: relative;
+    width: 23%;
+    .boolean * {
+      display: inline;
+    }
+    
+    .checkbox input[type="checkbox"] {
+      margin: 0;
+    }
+    
+    input {
+      width: 160px;
+      &.boolean {
+        height: 11px;
+        width: 20px;
+      }
+    }
   
     p {
       line-height: 1.7em;
@@ -14,17 +32,12 @@
   
   #content {
     width: 70%;
-    height: 20em;
-    padding: 0.8em 1.5em 0.8em 1.5em;
+    padding: 0 1.5em 0.8em 1.5em;
     float: right;
     margin-top: 1em;
-    
-    h3 {
-      font-size: 1.8em;
-      padding: 0.4em 0 0.5em 0
-    }
     p {
-      font-size: 1.1em;
+      font-size: 16px;
+      padding-bottom: 20px;
     }
   }
 
