@@ -1,20 +1,21 @@
-%div.list-row
-  %h4 Users
-  .column
-    - @users.each do |user|
-      %p
-        #{link_to user.name, user}
+.span8
+  %div.list-row
+    %h4 Users
+    .column
+      - @users.each do |user|
+        %p
+          #{link_to user.name, user}
 
-%div.list-row
-  %h4 Reports
-  .column
-    - @reports.each do |report|
-      %p
-        #{link_to report.customer_name, report}
+  %div.list-row
+    %h4 Reports
+    .column
+      - @reports.each do |report|
+        %p
+          #{link_to report.customer_name, report}
 
-%div.list-row
-  %h4 Companies
-  .column
-    - @companies.each do |company|
-      %p
-        #{link_to company.company_name, company}
+  %div.list-row
+    %h4 Companies
+    .column
+      - @companies.each do |company|
+        %p
+          #{link_to company.company_name, company}
