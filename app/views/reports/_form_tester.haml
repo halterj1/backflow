@@ -1,0 +1,51 @@
+= form_for [@report], :html => { :id => "multipage" } do |f|
+  - if @report.errors.any?
+    #errorExplanation
+      %h2
+        = pluralize(@report.errors.count, "error")
+        prohibited
+        this report from being saved:
+      %ul
+        - @report.errors.full_messages.each do |msg|
+          %li= msg
+          
+  /%form#multipage
+  %fieldset#page_one
+    %legend Section 1
+    %p.input
+      = f.label :Name
+      = f.text_field :customer_name
+    %p.input
+      = f.label :Number
+      = f.text_field :customer_number
+  %fieldset#page_two
+    %legend Section 2
+    %p.input
+      = f.label :Address
+      = f.text_field :service_address
+    %p.input
+      = f.label :Date
+      = f.text_field :date_test
+    %p.input
+      = f.label :Installation
+      = f.text_field :installation_type
+  %fieldset#page_three
+    %legend Section 3
+    %p.input
+      = f.label :Meter
+      = f.text_field :meter_number
+    %p.input
+      = f.label :Account
+      = f.text_field :account_number
+  %fieldset#page_four
+    %legend Section 4
+    %p.input
+      = f.label :Manufacturer
+      = f.text_field :assembly_manufacturer
+    %p.input
+      = f.label :Model
+      = f.text_field :assembly_model
+    %p.input
+      = f.label :Assembly_type
+      = f.text_field :assembly_type
+  = f.submit :class => "actions"

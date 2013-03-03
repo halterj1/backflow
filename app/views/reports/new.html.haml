@@ -1,5 +1,53 @@
-%h1 New report
-= render 'form'
-/= link_to 'Show', report_path
-|
+%h1
+  New report
+  - if current_user.has_role? :tester
+    > Check out this mockup of a multi-page Tester form
+- if current_user.has_role? :tester
+  = render 'form_tester'
+- else
+  = render 'form_raw'
+%br
 = link_to 'Back', reports_path
+
+- content_for :meta do  
+  :javascript
+    $(window).ready(function() {
+      $('#multipage').multipage({transitionFunction:transition,stateFunction: textpages});
+    });
+		
+    function generateTabs(tabs) { 
+		
+      html = '';
+      for (var i in tabs) { 
+        tab = tabs[i];
+        html = html + '<li class="multipage_tab"><a href="#" onclick="return $(\'#multipage\').gotopage(' + tab.number + ');">' + tab.title + '</a></li>';				
+      }
+      $('<ul class="multipage_tabs" id="multipage_tabs">'+html+'<div class="clearer"></div></ul>').insertBefore('#multipage');
+    }
+    function setActiveTab(selector,page) { 
+      $('#multipage_tabs li').each(function(index){ 
+        if ((index+1)==page) { 
+          $(this).addClass('active');
+        } else {
+          $(this).removeClass('active');
+        }
+      });			
+    }
+		
+    function transition(from,to) {
+      $(from).fadeOut('fast',function(){$(to).fadeIn('fast');});
+		
+    }
+    function textpages(obj,page,pages) { 
+      $(obj).html(page + ' of ' + pages);
+    }
+
+  :css
+    body { font-family:helvetica;}
+
+  	
+    p.input label { display:block; }
+  	
+  	
+    p.input input { width: 200px; }
+    .clearer { clear:both; width:100%; height:0px; }
