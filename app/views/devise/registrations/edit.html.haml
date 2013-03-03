@@ -1,19 +1,21 @@
-.edit_account
-  #form
-    %h2
-      Edit #{resource_name.to_s.humanize}
-    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f|
-      = f.error_notification
-      = display_base_errors resource
-      = f.input :name, :autofocus => true, :onkeyup => "", :tabindex => "1", :type => "text", :value => "", :placeholder => "Your full name"
-      = f.input :email, :required => true, :onkeyup => "", :tabindex => "1", :type => "text", :value => "", :placeholder => "Your email address"
-      %hr
-      %h4 Change Password
-      = f.input :password, :autocomplete => "off", :required => false, :onkeyup => "", :tabindex => "1", :type => "text", :value => "", :placeholder => "New password"
-      = f.input :password_confirmation, :required => false, :onkeyup => "", :tabindex => "1", :type => "text", :value => "", :placeholder => "Confirm password"
-      %hr
-      = f.input :current_password, :required => true, :placeholder => "Current password"
-      = f.button :submit, 'Update', :class => 'btn-primary'
-    %p
-      #{link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
-    = link_to "Back", :back
+.span3
+  .edit_account
+    #form
+      %h2
+        Edit #{resource_name.to_s.humanize}
+      = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f|
+        = f.error_notification
+        = display_base_errors resource
+        = f.input :name, :maxlength => "10", :autofocus => true, :onkeyup => "", :type => "text", :value => "", :placeholder => "Your full name"
+        = f.input :email, :required => true, :onkeyup => "", :type => "text", :value => "", :placeholder => "Your email address"
+        = f.input :current_password, :required => true, :placeholder => "Current password"
+        %hr
+        %h4 Change Password
+        = f.input :password_new, :autocomplete => "off", :required => false, :onkeyup => "", :type => "text", :value => "", :placeholder => "New password"
+        = f.input :password_confirmation, :required => false, :onkeyup => "", :type => "text", :value => "", :placeholder => "Confirm password"
+        %hr
+        = f.button :submit, 'Update', :class => 'btn btn-warning'
+        #{link_to "Cancel my account", registration_path(resource_name), :class => 'btn btn-danger', :data => { :confirm => "Are you sure?" }, :method => :delete}
+      %p
+        = link_to "Back", :back, :class => 'btn btn-primary'
+    
