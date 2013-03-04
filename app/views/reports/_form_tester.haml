@@ -1,4 +1,4 @@
-= form_for [@report], :html => { :id => "multipage" } do |f|
+= simple_form_for [@report], :html => { :id => "multipage" } do |f|
   - if @report.errors.any?
     #errorExplanation
       %h2
@@ -14,10 +14,10 @@
     %legend Section 1
     %p.input
       = f.label :Name
-      = f.text_field :customer_name
+      = f.text_field :customer_name, :minlength => "3", :maxlength => "15", :class => "validate"
     %p.input
       = f.label :Number
-      = f.text_field :customer_number
+      = f.text_field :customer_number,  :maxlength => "20"
   %fieldset#page_two
     %legend Section 2
     %p.input

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130204094000) do
+ActiveRecord::Schema.define(:version => 20130303214731) do
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130204094000) do
     t.string   "resource_type"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "company"
   end
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
