@@ -8,7 +8,7 @@
         = display_base_errors resource
         = f.input :name, :maxlength => "10", :autofocus => true, :onkeyup => "", :type => "text", :value => "", :placeholder => "Your full name"
         = f.input :email, :required => true, :onkeyup => "", :type => "text", :value => "", :placeholder => "Your email address"
-        = f.input :current_password, :required => true, :placeholder => "Current password"
+        = f.input :current_password, :placeholder => "Current password", :required => "yes"
         %hr
         %h4 Change Password
         = f.input :password_new, :autocomplete => "off", :required => false, :onkeyup => "", :type => "text", :value => "", :placeholder => "New password"

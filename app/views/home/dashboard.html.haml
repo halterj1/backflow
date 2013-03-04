@@ -1,21 +1,27 @@
 .span9
-  %div.list-row
-    %h4 Users
-    .column
-      - @users.each do |user|
-        %p
-          #{link_to user.name, user}
+  - if current_user.has_role? :VIP
+    %div.list-row
+      %h4 Users
+      .column
+        - @users.each do |user|
+          %p
+            #{link_to user.name, user}
 
-  %div.list-row
-    %h4 Reports
-    .column
-      - @reports.each do |report|
-        %p
-          #{link_to report.customer_name, report}
+    %div.list-row
+      %h4 Reports
+      .column
+        - @reports.each do |report|
+          %p
+            #{link_to report.customer_name, report}
 
-  %div.list-row
-    %h4 Companies
-    .column
-      - @companies.each do |company|
-        %p
-          #{link_to company.company_name, company}
+    %div.list-row
+      %h4 Companies
+      .column
+        - @companies.each do |company|
+          %p
+            #{link_to company.company_name, company}
+  - else
+    %h1
+      Welcome
+      #{current_user.name}!
+    %p Thank you for signing in.

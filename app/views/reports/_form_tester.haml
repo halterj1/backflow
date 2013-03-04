@@ -1,4 +1,4 @@
-= simple_form_for [@report], :html => { :id => "multipage" } do |f|
+= form_for [@report], :html => { :id => "multipage" } do |f|
   - if @report.errors.any?
     #errorExplanation
       %h2
@@ -14,38 +14,38 @@
     %legend Section 1
     %p.input
       = f.label :Name
-      = f.text_field :customer_name, :minlength => "3", :maxlength => "15", :class => "validate"
+      = f.text_field :customer_name, :maxlength => "15", :class => "validate", :required => "yes"
     %p.input
       = f.label :Number
-      = f.text_field :customer_number,  :maxlength => "20"
+      = f.text_field :customer_number, :minlength => "7", :maxlength => "20", :required => "yes"
   %fieldset#page_two
     %legend Section 2
     %p.input
       = f.label :Address
-      = f.text_field :service_address
+      = f.text_field :service_address, :required => "yes"
     %p.input
       = f.label :Date
-      = f.text_field :date_test
+      = f.text_field :date_test, :required => "yes"
     %p.input
       = f.label :Installation
-      = f.text_field :installation_type
+      = f.text_field :installation_type, :required => "yes"
   %fieldset#page_three
     %legend Section 3
     %p.input
       = f.label :Meter
-      = f.text_field :meter_number
+      = f.text_field :meter_number, :required => "yes"
     %p.input
       = f.label :Account
-      = f.text_field :account_number
+      = f.text_field :account_number, :required => "yes"
   %fieldset#page_four
     %legend Section 4
     %p.input
       = f.label :Manufacturer
-      = f.text_field :assembly_manufacturer
+      = f.text_field :assembly_manufacturer, :required => "yes"
     %p.input
       = f.label :Model
-      = f.text_field :assembly_model
+      = f.text_field :assembly_model, :required => "yes"
     %p.input
       = f.label :Assembly_type
-      = f.text_field :assembly_type
+      = f.text_field :assembly_type, :required => "yes"
   = f.submit :class => "actions"
